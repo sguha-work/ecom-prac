@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
-import AuthRouter from './router/auth.router';
+import AuthRouter from './router/auth.router.js';
+import StatusCode from './constants/status-codes.constant.js';
 
 const app = express();
 
@@ -12,10 +13,10 @@ app.use(cors());
 
 Object.keys(AuthRouter).forEach((method)=>{
     Object.keys(AuthRouter[method]).forEach((path)=>{
-        app[method](path, async (reqest, response)=>{
+        app[method](path, async (request, response)=>{
             try {
-                const result = await AuthRouter.post[path](request, response);
-                response.status(201).json(result);
+                const result = await AuthRouter.post[path](request);
+                response.status(StatusCode[method][result.status?result.status:(method=="post"?"created":"ok")]).json(result);
             } catch(error) {
                 console.error(error);
                 response.status(500).json({ message: 'Error creating user',error });
