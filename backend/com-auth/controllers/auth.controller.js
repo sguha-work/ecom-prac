@@ -15,7 +15,7 @@ class AuthController {
   }
 
   async login(request, response) {
-    await commonController.handleRequest(request, response, authService.login);
+    return await commonController.handleRequest(request, response, authService.login);
   };
 
   async register(request, response) {
