@@ -1,7 +1,7 @@
 import AuthController from "../controllers/auth.controller.js"
 const AuthRouter = {
     'post': {
-        '/login': (request)=>AuthController.login(request)
+        '/login': (request, response)=>AuthController.login(request, response)
     },
     'get': {
 

@@ -81,7 +81,7 @@ class CommonController {
       return requestParams;
     }
   
-    async handleRequest(request, response, serviceOperation, isLoginRequest = false, validationSchema) {
+    async handleRequest(request, serviceOperation,response, isLoginRequest = false, validationSchema) {
       try {
         let serviceResponse;
         const consolidatedParams = this.#collectRequestParams(request);
