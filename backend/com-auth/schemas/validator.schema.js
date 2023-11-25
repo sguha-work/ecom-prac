@@ -1,4 +1,4 @@
-const ValidatorSchema = {
+export const LoginValidatorSchema = {
     type: "object",
     properties: {
       email: {type: "string"},
@@ -7,4 +7,12 @@ const ValidatorSchema = {
     required: ["email", "password"],
     additionalProperties: false,
   }
-  export default ValidatorSchema;
+export const RegisterValidatorSchema = {
+    type: "object",
+    properties: {
+      email: {type: "string"},
+      password: {type: "string"},
+    },
+    required: ["email", "password"],
+    additionalProperties: false,
+  }
