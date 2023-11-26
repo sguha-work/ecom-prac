@@ -4,7 +4,7 @@ const ProductRouter = {
         
     },
     'get': {
-        '/get': (request, response)=>ProductController.get(request, response)
+        '/product/get': (request, response)=>ProductController.get(request, response)
     }
     
 }

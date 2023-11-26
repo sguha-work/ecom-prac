@@ -4,6 +4,7 @@ import MobileHeaderComponent from "../../shared-components/mobile-header/mobile-
 import PreLoaderComponent from "../../shared-components/pre-loader/pre-loader.component"
 import { useEffect } from "react";
 import hideLoaderSubject from "../../../services/loader.service";
+import CollectionGalleryComponent from "../../shared-components/collection-gallery/collection-gallery.component";
 function CollectionPageComponent() {
     useEffect(()=>{
         // this useEffect gets called when the component load is complete
@@ -50,90 +51,7 @@ function CollectionPageComponent() {
                         <div className="shop-page-wrapper">
                             <div className="container-fluid p-0">
                                 <div className="row no-gutters">
-                                    <div className="col-md-4">
-                                        <div className="banner-box banner-type-3 banner-type-3-1 banner-hover-1">
-                                            <div className="banner-inner">
-                                                <div className="banner-image">
-                                                    <img src="./src/assets/img/banner/m07-banner1.jpg" alt="Banner" />
-                                                </div>
-                                                <div className="banner-info">
-                                                    <p className="banner-title-1 lts-13 lts-lg-4 text-uppercase">New Season</p>
-                                                    <h2 className="banner-title-2">The <strong>Interview</strong></h2>
-                                                </div>
-                                                <a className="banner-link banner-overlay" href="shop-sidebar.html">Shop Now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-md-4">
-                                        <div className="banner-box banner-type-3 banner-type-3-1 banner-hover-1">
-                                            <div className="banner-inner">
-                                                <div className="banner-image">
-                                                    <img src="./src/assets/img/banner/m07-banner2.jpg" alt="Banner" />
-                                                </div>
-                                                <div className="banner-info">
-                                                    <p className="banner-title-1 lts-13 lts-lg-4 text-uppercase">New Men</p>
-                                                    <h2 className="banner-title-2">Autumn <strong>Winter</strong></h2>
-                                                </div>
-                                                <a className="banner-link banner-overlay" href="shop-sidebar.html">Shop Now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-md-4">
-                                        <div className="banner-box banner-type-3 banner-type-3-1 banner-hover-1">
-                                            <div className="banner-inner">
-                                                <div className="banner-image">
-                                                    <img src="./src/assets/img/banner/m07-banner3.jpg" alt="Banner" />
-                                                </div>
-                                                <div className="banner-info">
-                                                    <p className="banner-title-1 lts-13 lts-lg-4 text-uppercase">Hello</p>
-                                                    <h2 className="banner-title-2">Woman <strong>2019</strong></h2>
-                                                </div>
-                                                <a className="banner-link banner-overlay" href="shop-sidebar.html">Shop Now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-md-4">
-                                        <div className="banner-box banner-type-3 banner-type-3-1 banner-hover-1">
-                                            <div className="banner-inner">
-                                                <div className="banner-image">
-                                                    <img src="./src/assets/img/banner/m07-banner4.jpg" alt="Banner" />
-                                                </div>
-                                                <div className="banner-info">
-                                                    <p className="banner-title-1 lts-13 lts-lg-4 text-uppercase">New Season</p>
-                                                    <h2 className="banner-title-2">Man <strong>T-Shirt</strong></h2>
-                                                </div>
-                                                <a className="banner-link banner-overlay" href="shop-sidebar.html">Shop Now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-md-4">
-                                        <div className="banner-box banner-type-3 banner-type-3-1 banner-hover-1">
-                                            <div className="banner-inner">
-                                                <div className="banner-image">
-                                                    <img src="./src/assets/img/banner/m07-banner5.jpg" alt="Banner" />
-                                                </div>
-                                                <div className="banner-info">
-                                                    <p className="banner-title-1 lts-13 lts-lg-4 text-uppercase">Woman 2019</p>
-                                                    <h2 className="banner-title-2">Floral <strong>Dress</strong></h2>
-                                                </div>
-                                                <a className="banner-link banner-overlay" href="shop-sidebar.html">Shop Now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-md-4">
-                                        <div className="banner-box banner-type-3 banner-type-3-1 banner-hover-1">
-                                            <div className="banner-inner">
-                                                <div className="banner-image">
-                                                    <img src="./src/assets/img/banner/m07-banner6.jpg" alt="Banner" />
-                                                </div>
-                                                <div className="banner-info">
-                                                    <p className="banner-title-1 lts-13 lts-lg-4 text-uppercase">Jacket</p>
-                                                    <h2 className="banner-title-2">Man <strong>2019</strong></h2>
-                                                </div>
-                                                <a className="banner-link banner-overlay" href="shop-sidebar.html">Shop Now</a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <CollectionGalleryComponent></CollectionGalleryComponent>
                                 </div>
                             </div>
                         </div>
