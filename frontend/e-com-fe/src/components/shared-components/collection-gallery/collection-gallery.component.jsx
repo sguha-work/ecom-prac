@@ -1,5 +1,7 @@
 import API from "../../../services/api.service";
 import { useEffect, useState } from "react";
+import Subject_Collection$ from "../../../subjects/collection.subject";
+
 function CollectionGalleryComponent() {
     const [galleryItem, setGalleryItem] = useState([]);
     useEffect(() => {
@@ -11,38 +13,42 @@ function CollectionGalleryComponent() {
         // });
         // no name function. self invoking function
         // this function is required because we cannot made the useEffect an async function directly
-        (async () => {
-            try {
-                const data = await API.ajax("http://localhost:3000/product/get?page=1&limit=10");
-                console.log({ data });
-                setGalleryItem(data);
-            } catch (error) {
-                console.log(error);
-                console.error(error.custom_message);
-            }
-        })();
-
+        // (async () => {
+        //     try {
+        //         const data = await API.ajax("http://localhost:3000/product/get?page=1&limit=10");
+        //         console.log({ data });
+        //         setGalleryItem(data);
+        //     } catch (error) {
+        //         console.log(error);
+        //         console.error(error.custom_message);
+        //     }
+        // })();
+        Subject_Collection$.subscribe((data) => {
+            console.log({ data });
+            data && setGalleryItem(data);
+        });
+        API.ajax('http://localhost:3000/product/get?page=1&limit=10', "get");
     }, []);
     return (
         <>
             {
-                galleryItem.map((item, index) => 
-                    (
-                        <div className="col-md-4" key={index}>
-                            <div className="banner-box banner-type-3 banner-type-3-1 banner-hover-1">
-                                <div className="banner-inner">
-                                    <div className="banner-image">
-                                        <img src={`./src/assets/img/banner/${item.image}`} alt="Banner" />
-                                    </div>
-                                    <div className="banner-info">
-                                        <p className="banner-title-1 lts-13 lts-lg-4 text-uppercase">{item.sub_title}</p>
-                                        <h2 className="banner-title-2">{item.title.split(' ')[0]} <strong>{item.title.split(' ')[1]}</strong></h2>
-                                    </div>
-                                    <a className="banner-link banner-overlay" href="shop-sidebar.html">Shop Now</a>
+                galleryItem.map((item, index) =>
+                (
+                    <div className="col-md-4" key={index}>
+                        <div className="banner-box banner-type-3 banner-type-3-1 banner-hover-1">
+                            <div className="banner-inner">
+                                <div className="banner-image">
+                                    <img src={`./src/assets/img/banner/${item.image}`} alt="Banner" />
                                 </div>
+                                <div className="banner-info">
+                                    <p className="banner-title-1 lts-13 lts-lg-4 text-uppercase">{item.sub_title}</p>
+                                    <h2 className="banner-title-2">{item.title.split(' ')[0]} <strong>{item.title.split(' ')[1]}</strong></h2>
+                                </div>
+                                <a className="banner-link banner-overlay" href="shop-sidebar.html">Shop Now</a>
                             </div>
                         </div>
-                    )
+                    </div>
+                )
                 )
             }
 
