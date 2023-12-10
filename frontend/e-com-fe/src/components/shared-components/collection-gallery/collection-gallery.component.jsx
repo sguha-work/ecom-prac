@@ -27,7 +27,7 @@ function CollectionGalleryComponent() {
             console.log({ data });
             data && setGalleryItem(data);
         });
-        API.ajax('http://localhost:3000/product/get?page=1&limit=10', "get");
+        API.ajax('http://localhost:3000/product/get?page=1&limit=10', "get", Subject_Collection$);
     }, []);
     return (
         <>

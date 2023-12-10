@@ -7,5 +7,8 @@ class ProductController {
   static async get(request, response) {
     return await commonController.handleRequest(request, ProductService.get, response, GetProductValidatorSchema);
   };
+  static async getTrending(request, response) {
+    return await commonController.handleRequest(request, ProductService.getTrending, response, GetProductValidatorSchema);
+  };
 }
 export default ProductController;

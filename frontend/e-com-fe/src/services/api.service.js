@@ -1,7 +1,5 @@
 import {ajax} from "rxjs/ajax";
 import { pipe, map, catchError } from "rxjs";
-
-import Subject_Collection$ from "../subjects/collection.subject";
 class ApiService {
     // ajax(url) {
     //     return new Promise((resolve, reject) => {
@@ -12,7 +10,7 @@ class ApiService {
     //         });
     //     });
     // }
-    async ajax(url, method) {
+    async ajax(url, method, subject$) {
         
         // try {
         //     const data = await fetch(url);
@@ -38,7 +36,7 @@ class ApiService {
 
         observable.subscribe({
             next:(data)=>{
-                Subject_Collection$.next(data.response);
+                subject$.next(data.response);
             },
             error:(error)=>{
                 console.error(error);
